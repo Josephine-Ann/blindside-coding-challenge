@@ -1,0 +1,9 @@
+export const GET_USERS = 'GET_USERS';
+export const USERS_ERROR = 'USERS_ERROR'
+export const GET_VIDEOS = 'GET_VIDEOS';
+export const VIDEOS_ERROR = 'VIDEOS_ERROR'
+export const GET_VIDEO = 'GET_VIDEO';
+export const VIDEO_ERROR = 'VIDEO_ERROR';
+export const SET_INPUT = 'SET_INPUT';
+export const GET_INPUT = 'GET_INPUT';
+export const INPUT_ERROR = 'INPUT_ERROR';
