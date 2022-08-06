@@ -4,6 +4,7 @@ import { NextRouter, useRouter } from 'next/router';
 import 'antd/dist/antd.css';
 import { Button } from 'antd';
 import styles from '../styles/Login.module.css'
+import Head from 'next/head';
 
 const LoginPage = () => {
     const {data: session, status} = useSession()
@@ -15,6 +16,11 @@ const LoginPage = () => {
 
     return (
         <div>
+                <Head>
+                <title>Passion Videos</title>
+                    <link rel="shortcut icon" href="/favicon.ico" />
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
                 <div className={`container ${styles.bodyLoginPage}`}>
         <div className="container-poster"></div>
         <div className="container-main">

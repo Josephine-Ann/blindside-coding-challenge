@@ -9,7 +9,7 @@ const VideoGrid = ({video}) => {
  return (
   <Link href={`/video/${video.id}`}>
       <Card
-      className="flex flex-col items-center"
+      className={`flex flex-col items-center ant-card`}
     hoverable
     style={{
       width: 240,

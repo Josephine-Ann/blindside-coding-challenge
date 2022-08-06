@@ -1,12 +1,15 @@
 import {GET_USERS, USERS_ERROR} from '../types'
-import { getSession } from "next-auth/react"
 
 export const getUsers = () => async (dispatch) => {
-    try{
-        const res = await getSession()
+    const responseUsers = await fetch('http://localhost:3000/api/users')
+    const responseSessions = await fetch('http://localhost:3000/api/sessions')
+    const users = await responseUsers.json()
+    const sessions = await responseSessions.json()
+    const user = users.find(user => user.id === sessions._id)
+  try{
         dispatch({
             type: GET_USERS,
-            payload: res
+            payload: user
         })
     }
     catch(error){
@@ -19,12 +22,3 @@ export const getUsers = () => async (dispatch) => {
 }
 
 
-export const getServerSideProps = async (context) => {
-    const data = await getSession(context)
-  
-    return {
-      props: {
-        data
-      }
-    }
-  }

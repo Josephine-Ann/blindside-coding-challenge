@@ -1,7 +1,8 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
-// import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
-// import clientPromise from "../../../lib/mongodb"
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
+import clientPromise from "../../../lib/mongodb"
+import { MongoClient, ObjectId } from "mongodb";
 import GoogleProvider from "next-auth/providers/google";
 
 export default NextAuth({
@@ -25,6 +26,7 @@ export default NextAuth({
     // ...add more providers here
   ],
   url: process.env.NEXTAUTH_URL,
-  secret: process.env.SECRET
+  secret: process.env.SECRET,
+  adapter: MongoDBAdapter(clientPromise),
 })
 // 

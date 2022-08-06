@@ -32,13 +32,13 @@ const Comments = () => {
     {
       author: 'Han Solo',
       avatar: 'https://joeschmoe.io/api/v1/jon',
-      content: <p>I love this video, wow. It's so cool!</p>,
+      content: <p>I love this video, wow. It's so cool! It's the best! Have you ever seen something so impressive?</p>,
       datetime: moment().fromNow(),
     },
     {
       author: 'Jess the First',
       avatar: 'https://joeschmoe.io/api/v1/jess',
-      content: <p>I know, I've never seen anything like it!</p>,
+      content: <p>I know, I've never seen anything like it! I am so inspired by it. I identify so much with it.</p>,
       datetime: moment().fromNow(),
     },
     {

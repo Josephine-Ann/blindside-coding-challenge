@@ -16,7 +16,7 @@ export default function AvatarSection () {
     const usersList = useSelector(state => state.usersList)
     const {loading, error, users} = usersList
     useEffect(() => {
-        dispatch(getUsers()) 
+        dispatch(getUsers(usersList)) 
     }, [dispatch])
     return (
         <div className={`mt-4 xl:mt-0 w-full flex h-[15vh] items-center justify-between md:flex-row flex-col`}>
@@ -34,7 +34,7 @@ export default function AvatarSection () {
             xxl: 100,
             }}
             icon={<AntDesignOutlined/>}
-            src={loading ? "" : users.user.image}
+            src={users ? `${users.image}` : "" }
         />
         <Button onClick={() => {signOut()}} className="ml-4" type="primary">Sign out</Button>
         </div>

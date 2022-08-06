@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import 'antd/dist/antd.css';
 import { HomeOutlined, HeartOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
@@ -80,6 +81,11 @@ const Layout = ({children}) => {
     }, [id])
   return (
     <div>
+      <Head>
+      <title>Passion Videos</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
         <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={id ? items : items.slice(0,1)} />
         {children}
     </div>
